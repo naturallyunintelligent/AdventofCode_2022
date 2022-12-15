@@ -27,5 +27,7 @@ Day 04
 
 
 Day 05
- - []()
- - []()
+ - [list extend](https://stackoverflow.com/questions/44535045/is-there-a-slice-equivalent-to-append-in-python)
+ - [slicing](https://www.geeksforgeeks.org/python-list-slicing/)
+ - [del and pop](https://docs.python.org/3/library/stdtypes.html)
+ - [split lines](https://www.w3schools.com/python/ref_string_splitlines.asp)
