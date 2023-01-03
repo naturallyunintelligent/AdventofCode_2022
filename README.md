@@ -31,3 +31,11 @@ Day 05
  - [slicing](https://www.geeksforgeeks.org/python-list-slicing/)
  - [del and pop](https://docs.python.org/3/library/stdtypes.html)
  - [split lines](https://www.w3schools.com/python/ref_string_splitlines.asp)
+
+Day 07
+ - [asked chatgpt how can a use a list of strings to access nested keys in a python dict + how would I then assign a value to a nested dictionary key](https://chat.openai.com/chat)
+ - [iterating through dict](https://www.tutorialspoint.com/How-to-recursively-iterate-a-nested-Python-dictionary)
+ - [iterate through a dict](https://realpython.com/iterate-through-dictionary-python/)
+ - [recursion - if you only revisit one link, revisit this](https://realpython.com/python-recursion/)
+ - [defaultdict](https://realpython.com/python-defaultdict/)
+ - [optional function args](https://realpython.com/python-optional-arguments/)

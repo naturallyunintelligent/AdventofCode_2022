@@ -1,5 +1,5 @@
-input_text_file = "sample.txt"
-#input_text_file = "input.txt"
+#input_text_file = "sample.txt"
+input_text_file = "input.txt"
 
 def load_data(input_text_file):
     with open(input_text_file) as input_file:

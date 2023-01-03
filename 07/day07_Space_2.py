@@ -53,7 +53,7 @@ def create_dir_tree_dict(terminal_output):
     return dir_dict
 
 
-def analyse_dir_sizes(dir_dict):
+def analyse_dir_sizes(dir_dict, dir_size_of_interest, max_or_min):
 
     chosen_dirs_size = []
 
@@ -66,19 +66,22 @@ def analyse_dir_sizes(dir_dict):
             else:
                 current_dir_size += content
 
-        if current_dir_size < 100000:
-            chosen_dirs_size.append(current_dir_size)
+        if max_or_min == 'min':
+            if current_dir_size > dir_size_of_interest:
+                chosen_dirs_size.append(current_dir_size)
+        elif max_or_min == 'max':
+            if current_dir_size < dir_size_of_interest:
+                chosen_dirs_size.append(current_dir_size)
 
         return current_dir_size
 
 
     dir_size(dir_dict)
 
-    total_size = sum(chosen_dirs_size)
+    return chosen_dirs_size
 
-
-
-    return total_size
+def list_dirs_larger_than_x(dir_dict, space_reqd_for_update):
+    return
 
 if __name__ == '__main__':
 
@@ -86,13 +89,31 @@ if __name__ == '__main__':
 
     dir_dict = create_dir_tree_dict(terminal_output)
 
-    sum_of_chosen_dirs = analyse_dir_sizes(dir_dict)
+    sum_of_chosen_dirs = sum(analyse_dir_sizes(dir_dict, 100000, 'max'))
 
     if input_text_file == "sample.txt":
         assert sum_of_chosen_dirs == 95437
 
-    print(f"sum_of_chosen_dirs: {sum_of_chosen_dirs}")
+    #print(f"sum_of_chosen_dirs: {sum_of_chosen_dirs}")
+
+    total_disk_space = 70000000
+    space_reqd_for_update = 30000000
+
+    sum_of_outer_dir = max(analyse_dir_sizes(dir_dict, 1, 'min'))
+
+    space_available = total_disk_space - sum_of_outer_dir
+
+    space_to_clear = space_reqd_for_update - space_available
+
+    dirs_greater_than_space_reqd = analyse_dir_sizes(dir_dict, space_to_clear, 'min')
+
+    smallest_suitable_dir = min(dirs_greater_than_space_reqd)
+
+    if input_text_file == "sample.txt":
+        assert smallest_suitable_dir == 24933642
+
+    print(f"smallest_suitable_dir: {smallest_suitable_dir}")
 
     #store answer as a comment
-    #1453349
+    # 2948823
     #
